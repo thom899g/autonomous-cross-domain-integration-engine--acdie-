@@ -1,0 +1,32 @@
+acdie_config:
+  hypergraph:
+    max_modules: 1000
+    initial_domains: ["data_processing", "ml_training", "api_integration", "storage"]
+    connection_threshold: 0.7
+    
+  rl_agent:
+    learning_rate: 0.001
+    gamma: 0.99
+    epsilon_start: 1.0
+    epsilon_end: 0.01
+    epsilon_decay: 0.995
+    memory_capacity: 10000
+    batch_size: 32
+    
+  performance:
+    metrics:
+      - integration_efficiency
+      - resource_utilization
+      - latency
+      - success_rate
+    update_interval: 60  # seconds
+    
+  firebase:
+    collection_name: "acdie_state"
+    batch_size: 100
+    timeout_seconds: 30
+    
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} | {message}"
+  rotation: "10 MB"
